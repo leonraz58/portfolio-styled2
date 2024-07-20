@@ -5,10 +5,12 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
 import {Icon} from "../../../components/Icon/Icon";
 import {StyledLink} from "../../../components/Link.styled";
+import {Container} from "../../../components/Container";
 
 export const Main = () => {
     return (
         <StyledMain>
+            <Container>
             <StyledMainCard>
                 <Photo src={photo} alt=""/>
                 <FlexWrapper direction={"column"}>
@@ -27,6 +29,7 @@ export const Main = () => {
                     </FlexWrapper>
                 </FlexWrapper>
             </StyledMainCard>
+            </Container>
         </StyledMain>
     );
 };
@@ -36,15 +39,16 @@ const StyledMain = styled.section`
     background-repeat: no-repeat;
     background-position: 0 0;
     padding-top: 170px;
-    
+    padding-bottom: 50px;
 `
 
 const StyledMainCard = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 60px;
     width: 1158px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
     padding: 20px 100px 65px;
     border-radius: 200px 0;
     border: 2px solid rgba(255,255,255,0.5);
