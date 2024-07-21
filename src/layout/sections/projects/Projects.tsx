@@ -30,5 +30,6 @@ export const Projects = () => {
 };
 
 const StyledProject = styled.section`
-    padding-top: 60px;
+    margin-top: 60px;
+    margin-bottom: 154px;
 `

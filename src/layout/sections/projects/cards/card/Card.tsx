@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import image from "./../../../../../assets/images/projects/project-1.webp"
 import image2 from "./../../../../../assets/images/projects/project1.jpg"
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import {CardButton} from "../../../../../components/Button";
