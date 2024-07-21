@@ -4,6 +4,7 @@ import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {TabMenu} from "./tabMenu/tabMenu";
+import {Cards} from "./cards/Cards";
 
 export const Projects = () => {
     const tabsData: Array<string> = [
@@ -21,6 +22,7 @@ export const Projects = () => {
             <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
                 <SectionTitle>Projects</SectionTitle>
                 <TabMenu tabsData={tabsData}/>
+                <Cards/>
             </FlexWrapper>
         </Container>
         </StyledProject>
