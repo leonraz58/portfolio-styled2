@@ -16,3 +16,12 @@ export const Button = styled.button<ButtonPropsType>`
     font-size: 15px;
     line-height: 150%;
 `
+
+export const CardButton = styled(Button)`
+    font-size: 14px;
+    line-height: 148%;
+    background-color: #2157F2;   
+    color: #F9F9FC;
+    padding: ${props => props.padding || "4px 18px"};
+    height: 29px;
+`
