@@ -23,3 +23,11 @@ export const Icon: React.FC<IconPropsType> = (props: IconPropsType) => {
     );
 };
 
+type LinkIconPropsType = IconPropsType & { href: string }
+
+export const LinkIcon: React.FC<LinkIconPropsType> = ({href, ...rest}:LinkIconPropsType ) => {
+    return (
+        <a href={href}><Icon {...rest}/></a>
+    )
+}
+

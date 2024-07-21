@@ -3,7 +3,7 @@ import styled from "styled-components";
 import man from './../../../assets/images/man.webp'
 import map from "./../../../assets/images/map.webp"
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {Icon} from "../../../components/Icon/Icon";
+import {Icon, LinkIcon} from "../../../components/Icon/Icon";
 import circle from "./../../../assets/images/sectiontitlecircle.svg"
 
 const infoData =
@@ -21,31 +21,21 @@ export const Location = () => {
             <Info>
                 <FlexWrapper direction={"column"}>
                     <IconList>
-                        <a href="#">
-                            <li>
-                                <Icon iconId={"whatsapp"}
-                                      width={"26"}
-                                      height={"26"}
-                                      viewBox={"0 0 26 26"}/>
-                            </li>
-                        </a>
-                        <a href="#">
-                            <li>
-                                <Icon iconId={"instagram"}
-                                      width={"26"}
-                                      height={"26"}
-                                      viewBox={"0 0 26 26"}/>
-                            </li>
-                        </a>
-                        <a href="#">
-                            <li>
-                                <Icon iconId={"goTop"}
-                                      width={"26"}
-                                      height={"26"}
-                                      viewBox={"0 0 26 26"}
-                                />
-                            </li>
-                        </a>
+                        <LinkIcon href="#"
+                                  iconId={"whatsapp"}
+                                  width={"26"}
+                                  height={"26"}
+                                  viewBox={"0 0 26 26"}/>
+                        <LinkIcon href="#"
+                                  iconId={"instagram"}
+                                  width={"26"}
+                                  height={"26"}
+                                  viewBox={"0 0 26 26"}/>
+                        <LinkIcon href="#"
+                                  iconId={"goTop"}
+                                  width={"26"}
+                                  height={"26"}
+                                  viewBox={"0 0 26 26"}/>
                     </IconList>
                     <Name>I’m Alireza Kavousy nezjad</Name>
                     <InfoList>
@@ -100,10 +90,10 @@ const InfoList = styled.ul`
     display: flex;
     column-gap: 16px;
     flex-direction: column;
-    list-style-image: url(${circle});    
+    list-style-image: url(${circle});
     margin-left: 24px;
 
-    li {        
+    li {
         padding-left: 12px;
         color: #393939;
         font-size: 20px;
@@ -111,6 +101,6 @@ const InfoList = styled.ul`
 
         & + li {
             margin-top: 6px;
-        }        
+        }
     }
 `
