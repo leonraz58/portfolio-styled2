@@ -7,17 +7,15 @@ import {CardButton} from "../../../../../components/Button";
 export const Card = () => {
     return (
         <StyledCard>
-            {/*<FlexWrapper direction="column" justify={"flex-end"}>*/}
+            <FlexWrapper direction="column" justify={"flex-end"}>
                 <CardContent>
                     <Text>Story motion for sale English cources</Text>
-                    <FlexWrapper justify="space-between" align={"center"}>
-
+                    <ButtonsWrapper>
                             <CardButton>Edit for you</CardButton>
                             <Link>see preview</Link>
-
-                    </FlexWrapper>
+                    </ButtonsWrapper>
                 </CardContent>
-            {/*</FlexWrapper>*/}
+            </FlexWrapper>
 
         </StyledCard>
     );
@@ -32,11 +30,6 @@ const StyledCard = styled.div`
     background-image: url(${image2});
     background-position: center;
     background-size: cover;
-    
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-
 `
 
 const CardContent = styled.div`
@@ -61,4 +54,10 @@ const Link = styled.a`
     font-size: 14px;
     line-height: 148%;
     cursor: pointer;
+`
+
+const ButtonsWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
