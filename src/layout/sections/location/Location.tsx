@@ -3,7 +3,7 @@ import styled from "styled-components";
 import man from './../../../assets/images/man.webp'
 import map from "./../../../assets/images/map.webp"
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {Icon, LinkIcon} from "../../../components/Icon/Icon";
+import {LinkIcon} from "../../../components/Icon/Icon";
 import circle from "./../../../assets/images/sectiontitlecircle.svg"
 
 const infoData =
