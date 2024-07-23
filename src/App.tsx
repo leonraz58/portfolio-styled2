@@ -4,6 +4,7 @@ import {GlobalStyles} from "./styles/Global.styled";
 import {Skills} from "./layout/sections/skills/Skills";
 import {Projects} from "./layout/sections/projects/Projects";
 import {Location} from "./layout/sections/location/Location";
+import {Services} from "./layout/sections/services/Services";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Skills/>
             <Projects/>
             <Location/>
+            <Services/>
         </>
     );
 }
