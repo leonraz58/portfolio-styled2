@@ -87,7 +87,7 @@ export const Contact = () => {
 };
 
 const StyledContact = styled.section`
-    padding-top: 65px;
+    padding: 65px 0 197px;
 `
 
 const Box = styled.div`
