@@ -21,7 +21,7 @@ export const Services = () => {
 };
 
 const StyledServices = styled.section`
-    margin-top: 65px;
+    margin: 65px 0 97px;
     ${SectionTitle} {
         margin-bottom: 83px;
     }

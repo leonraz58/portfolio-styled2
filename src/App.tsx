@@ -5,6 +5,7 @@ import {Skills} from "./layout/sections/skills/Skills";
 import {Projects} from "./layout/sections/projects/Projects";
 import {Location} from "./layout/sections/location/Location";
 import {Services} from "./layout/sections/services/Services";
+import {Learning} from "./layout/sections/learning/Learning";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Projects/>
             <Location/>
             <Services/>
+            <Learning/>
         </>
     );
 }
