@@ -1,15 +1,19 @@
 import React from 'react';
 import styled from "styled-components";
-import image2 from "./../../../../../assets/images/projects/project1.jpg"
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import {CardButton} from "../../../../../components/Button";
+import {ProjectType} from "../Cards";
 
-export const Card = () => {
+type CardPropsType = {
+    project: ProjectType
+}
+
+export const Card = (props: CardPropsType) => {
     return (
-        <StyledCard>
+        <StyledCard src={props.project.src}>
             <FlexWrapper direction="column" justify={"flex-end"}>
                 <CardContent>
-                    <Text>Story motion for sale English cources</Text>
+                    <Text>{props.project.title}</Text>
                     <ButtonsWrapper>
                             <CardButton>Edit for you</CardButton>
                             <Link>see preview</Link>
@@ -20,17 +24,6 @@ export const Card = () => {
         </StyledCard>
     );
 };
-
-const StyledCard = styled.div`
-    width: 270px;
-    height: 394px;
-    color: black;
-    border: none;
-    border-radius: 26px;
-    background-image: url(${image2});
-    background-position: center;
-    background-size: cover;
-`
 
 const CardContent = styled.div`
     background-color: white;
@@ -46,7 +39,6 @@ const Text = styled.p`
     line-height: 150%;
     color: #2157f2;
     margin-bottom: 25px;
-
 `
 
 const Link = styled.a`
@@ -54,6 +46,32 @@ const Link = styled.a`
     font-size: 14px;
     line-height: 148%;
     cursor: pointer;
+`
+
+const StyledCard = styled.div<{ src: string }>`
+    width: 270px;
+    height: 394px;
+    color: black;
+    border: none;
+    border-radius: 26px;
+    background-image: url(${props => props.src});
+    background-position: center;
+    background-size: cover;
+    
+    &:hover ${CardContent} {
+        background-color: #a6bcfa;
+        & ${Text} {
+            color: white;
+        }
+        
+        & ${Link} {
+            color: white;
+        }
+        
+        & ${CardButton} {
+            color: #a6bcfa;
+        }
+    }
 `
 
 const ButtonsWrapper = styled.div`

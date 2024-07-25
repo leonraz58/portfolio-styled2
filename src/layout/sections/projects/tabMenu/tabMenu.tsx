@@ -1,8 +1,12 @@
 import React from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+
+export type TabsStatusType = "story"|"post"|"banner"|"trailer"|"design"|"more"
 
 type TabMenuPropsType = {
-    tabsData: string[]
+    tabsData: Array<{ title: string, status: TabsStatusType }>
+    changeFilterStatus: (status: TabsStatusType) => void
+    currentFilterStatus: TabsStatusType
 }
 
 export const TabMenu = (props: TabMenuPropsType) => {
@@ -12,7 +16,11 @@ export const TabMenu = (props: TabMenuPropsType) => {
                 {props.tabsData.map((tab, index) => {
                     return (
                         <li key={index}>
-                            <TabButton>{tab}</TabButton>
+                            <TabButton onClick={()=>{props.changeFilterStatus(tab.status)}}
+                                       active={props.currentFilterStatus === tab.status}
+                            >
+                                {tab.title}
+                            </TabButton>
                         </li>
                     )
                 })}
@@ -36,7 +44,7 @@ const StyledTabMenu = styled.nav`
     }
 `
 
-const TabButton = styled.button`
+const TabButton = styled.button<{active: boolean}>`
     background-color: #F8FAFF;
     color: #1f1f1f;
     border: 3px solid #a6bcfa;
@@ -47,4 +55,18 @@ const TabButton = styled.button`
     font-weight: 400;
     font-size: 20px;
     line-height: 136%;
+
+    &:hover {
+        color: #FFFFFF;
+        border: 3px solid #a6bcfa;
+        background-color: #a6bcfa;
+    }
+    
+    ${props => props.active && css`
+        & {
+            color: #FFFFFF;
+            border: 3px solid #a6bcfa;
+            background-color: #a6bcfa;
+        }        
+    `}
 `
