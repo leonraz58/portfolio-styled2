@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
-import photo from '../../../assets/images/photo.webp'
+import photo from '../../../assets/images/main/photo.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
 import {Icon} from "../../../components/Icon/Icon";
 import {StyledLink} from "../../../components/Link.styled";
 import {Container} from "../../../components/Container";
-import cross from "../../../assets/images/cross.png"
-import circle from '../../../assets/images/ellipse.png'
+import cross from "../../../assets/images/main/cross.svg"
+import circle from '../../../assets/images/main/ellipse.svg'
 
 export const Main = () => {
     return (
@@ -57,7 +57,7 @@ const Cross = styled.div`
     height: 105px;
     background-image: url(${cross});
     background-size: cover;
-    top: -70px;
+    top: -75px;
     left: 374px;
 `
 
