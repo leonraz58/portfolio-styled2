@@ -26,31 +26,43 @@ export const projectsData: Array<ProjectType> = [
     {
         id: 3,
         src: image4,
-        title: "Story motion for sale English cources - post",
+        title: "Story motion for sale English cources",
         type: "post"
     },
     {
         id: 4,
         src: image1,
-        title: "Story motion for sale English cources - banner",
+        title: "Story motion for sale English cources",
         type: "banner"
     },
     {
         id: 5,
         src: image2,
-        title: "Story motion for sale English cources - trailer",
+        title: "Story motion for sale English cources",
         type: "trailer"
     },
     {
         id: 6,
         src: image3,
-        title: "Story motion for sale English cources - desighn",
+        title: "Story motion for sale English cources",
         type: "design"
     },
     {
         id: 7,
         src: image4,
-        title: "Story motion for sale English cources - more",
+        title: "Story motion for sale English cources",
         type: "more"
+    },
+    {
+        id: 8,
+        src: image4,
+        title: "Story motion for sale English cources",
+        type: "story"
+    },
+    {
+        id: 9,
+        src: image4,
+        title: "Story motion for sale English cources",
+        type: "story"
     }
 ]

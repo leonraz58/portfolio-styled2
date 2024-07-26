@@ -6,6 +6,8 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import {TabMenu, TabsStatusType} from "./tabMenu/tabMenu";
 import {Cards} from "./cards/Cards";
 import {projectsData} from "./projectsData";
+import dots from "./../../../assets/images/projects/dots.svg"
+import bigCross from "./../../../assets/images/projects/bigCross.svg"
 
 export const Projects = () => {
 
@@ -22,7 +24,7 @@ export const Projects = () => {
 
     let filteredProjects = projectsData
 
-    switch(statusFilter){
+    switch (statusFilter) {
         case "post":
             filteredProjects = filteredProjects.filter(project => project.type === "post");
             break;
@@ -48,19 +50,46 @@ export const Projects = () => {
     }
 
     return (
-        <StyledProject>
-        <Container>
-            <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
-                <SectionTitle>Projects</SectionTitle>
-                <TabMenu tabsData={tabsData} changeFilterStatus={setStatusFilter} currentFilterStatus={statusFilter}/>
-                <Cards projects={filteredProjects}/>
-            </FlexWrapper>
-        </Container>
-        </StyledProject>
+        <StyledProjects>
+            <Container>
+                <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
+                    <SectionTitle>Projects</SectionTitle>
+                    <TabMenu tabsData={tabsData} changeFilterStatus={setStatusFilter}
+                             currentFilterStatus={statusFilter}/>
+                    <Cards projects={filteredProjects}/>
+                </FlexWrapper>
+            </Container>
+        </StyledProjects>
     );
 };
 
-const StyledProject = styled.section`
+const StyledProjects = styled.section`
     margin-top: 60px;
     margin-bottom: 154px;
+    position: relative;
+    
+    & ${Container} {
+        position: relative;
+        z-index: 0;
+        &::before {
+            content: url(${dots});
+            display: inline-block;
+            position: absolute;
+            top: 24px;
+            left: 20px;
+            z-index: -1;
+        }
+
+        &::after {
+            content: url(${bigCross});
+            height: 392px;
+            width: 361px;
+            position: absolute;
+            right: -95px;
+            bottom: -160px;
+            z-index: -1;
+        }
+    }
+    
+    
 `

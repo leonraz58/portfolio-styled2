@@ -26,5 +26,7 @@ const StyledCards = styled.ul`
     display: flex;
     gap: 38px;
     margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
