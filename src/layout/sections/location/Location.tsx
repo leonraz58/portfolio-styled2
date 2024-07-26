@@ -37,7 +37,7 @@ export const Location = () => {
                                   height={"26"}
                                   viewBox={"0 0 26 26"}/>
                     </IconList>
-                    <Name>I’m Alireza Kavousy nezjad</Name>
+                    <Name>I’m <span>Alireza</span> Kavousy nezjad</Name>
                     <InfoList>
                         {infoData.map((item, i) => (<li key={i}>{item}</li>))}
                     </InfoList>
@@ -84,6 +84,10 @@ const Name = styled.span`
     font-size: 60px;
     line-height: 136%;
     color: #393939;
+
+    span {
+        color: blue;
+    }
 `
 
 const InfoList = styled.ul`
