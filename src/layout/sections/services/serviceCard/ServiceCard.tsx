@@ -19,7 +19,8 @@ export const ServiceCard = (props: ServiceCardPropsType) => {
                     viewBox={'0 0 73 73'}
                 />
                 <Text>{props.text}</Text>
-                <Link>View More
+
+                <Link><FlexWrapper align={"center"} gap={"15px"}>View More
                     <Icon
                         iconId={"arrow"}
                         width={"21"}
@@ -27,7 +28,9 @@ export const ServiceCard = (props: ServiceCardPropsType) => {
                         viewBox={"0 0 21 21"}
                         fill={"#2157F2"}
                     />
+                </FlexWrapper>
                 </Link>
+
             </FlexWrapper>
         </StyledServiceCard>
     );
@@ -48,8 +51,32 @@ const Link = styled.a`
     line-height: 196%;
     color: #2157f2;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
+    
+    ${FlexWrapper} {
+        position: relative;
+        
+        &:hover {
+            &::before {
+                width: 100%;
+            }    
+        }
+        &::before {
+            content: "";
+            display: inline-block;
+
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            background-color: #2157f2;
+            width: 0;
+            height: 2px;
+            transition: .2s ease-in-out;
+        }
+    }
 `
 
 const Text = styled.span`
