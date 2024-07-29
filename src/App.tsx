@@ -8,10 +8,13 @@ import {Services} from "./layout/sections/services/Services";
 import {Learning} from "./layout/sections/learning/Learning";
 import {Contact} from "./layout/sections/contact/Contact";
 import {Footer} from "./layout/footer/Footer";
+import {ThemeProvider} from "styled-components";
+import {myTheme} from "./styles/Theme";
 
 
 function App() {
     return (
+        <ThemeProvider theme={myTheme.light}>
         <>
             <GlobalStyles/>
             <Main/>
@@ -23,6 +26,7 @@ function App() {
             <Contact/>
             <Footer/>
         </>
+        </ThemeProvider>
     );
 }
 

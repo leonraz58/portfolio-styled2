@@ -15,6 +15,7 @@ export const Button = styled.button<ButtonPropsType>`
     font-weight: 700;
     font-size: 15px;
     line-height: 150%;
+    white-space: nowrap;
 `
 
 export const CardButton = styled(Button)`

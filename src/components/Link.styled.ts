@@ -9,5 +9,6 @@ type LinkPropsType = {
 export const StyledLink = styled.a<LinkPropsType>`
     color: ${props => props.color || "#6C92FF"};
     font-size: ${props => props.fontSize || "16px"};
-    font-weight: ${props => props.fontWeight || "600"};    
+    font-weight: ${props => props.fontWeight || "600"};
+    white-space: nowrap;
 `
