@@ -25,4 +25,10 @@ export const CardButton = styled(Button)`
     color: #F9F9FC;
     padding: ${props => props.padding || "4px 18px"};
     height: 29px;
+
+    @media screen and (max-width: 650px){
+        height: 18px;
+        font-size: 8px;
+        padding: ${props => props.padding || "2px 11px"};
+    }
 `

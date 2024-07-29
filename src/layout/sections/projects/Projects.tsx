@@ -52,12 +52,10 @@ export const Projects = () => {
     return (
         <StyledProjects>
             <Container>
-                <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
                     <SectionTitle>Projects</SectionTitle>
                     <TabMenu tabsData={tabsData} changeFilterStatus={setStatusFilter}
                              currentFilterStatus={statusFilter}/>
                     <Cards projects={filteredProjects}/>
-                </FlexWrapper>
             </Container>
         </StyledProjects>
     );
@@ -67,29 +65,32 @@ const StyledProjects = styled.section`
     margin-top: 60px;
     margin-bottom: 154px;
     position: relative;
-    
-    & ${Container} {
-        position: relative;
-        z-index: 0;
-        &::before {
-            content: url(${dots});
-            display: inline-block;
-            position: absolute;
-            top: 24px;
-            left: 20px;
-            z-index: -1;
-        }
 
-        &::after {
-            content: url(${bigCross});
-            height: 392px;
-            width: 361px;
-            position: absolute;
-            right: -95px;
-            bottom: -160px;
-            z-index: -1;
+    @media screen and (min-width: 769px){
+        & ${Container} {
+            position: relative;
+            z-index: 0;
+            &::before {
+                content: url(${dots});
+                display: inline-block;
+                position: absolute;
+                top: 24px;
+                left: 20px;
+                z-index: -1;
+            }
+
+            &::after {
+                content: url(${bigCross});
+                height: 392px;
+                width: 361px;
+                position: absolute;
+                right: -95px;
+                bottom: -160px;
+                z-index: -1;
+            }
         }
     }
+    
     
     
 `

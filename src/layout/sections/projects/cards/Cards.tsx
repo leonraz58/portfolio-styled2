@@ -24,9 +24,16 @@ export const Cards = (props: CardsPropsType) => {
 
 const StyledCards = styled.ul`
     display: flex;
-    gap: 38px;
+    column-gap: 38px;
+    row-gap: 48px;
     margin-top: 60px;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media screen and (max-width: 650px){
+        column-gap: 23px;
+        row-gap: 29px;
+        margin-top: 37px;
+    }
 `
 

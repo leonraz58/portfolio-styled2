@@ -30,18 +30,25 @@ export const TabMenu = (props: TabMenuPropsType) => {
 };
 
 const StyledTabMenu = styled.nav`
-    width: 100%;
+    //width: 100%;
     margin-top: 89px;
-    
+
     ul {
-        display: flex;
-        justify-content: space-around;
-        
-        li {
-            max-width: 159px;
-            width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(159px, 1fr));
+
+
+        column-gap: 40px;
+        row-gap: 30px;
+        margin-bottom: 60px;
+
+        @media ${({theme}) => theme.media.mobile} {
+            grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+            column-gap: 25px;
+            row-gap: 18px;
         }
     }
+
 `
 
 const TabButton = styled.button<{active: boolean}>`

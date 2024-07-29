@@ -31,6 +31,12 @@ const CardContent = styled.div`
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     border-radius: 0 0 26px 26px;
     padding: 17px 33px 25px;
+    
+    @media screen and (max-width: 650px){
+        padding: 10px 20px 14px;
+        border-radius: 0 0 16px 16px;
+    }
+
 `
 
 const Text = styled.p`
@@ -39,6 +45,11 @@ const Text = styled.p`
     line-height: 150%;
     color: #2157f2;
     margin-bottom: 25px;
+
+    @media screen and (max-width: 650px){
+        font-size: 12px;
+        margin-bottom: 16px;
+    }    
 `
 
 const Link = styled.a`
@@ -46,6 +57,10 @@ const Link = styled.a`
     font-size: 14px;
     line-height: 148%;
     cursor: pointer;
+
+    @media screen and (max-width: 650px){
+        font-size: 8px;
+    }
 `
 
 const StyledCard = styled.div<{ src: string }>`
@@ -57,6 +72,12 @@ const StyledCard = styled.div<{ src: string }>`
     background-image: url(${props => props.src});
     background-position: center;
     background-size: cover;
+
+    @media screen and (max-width: 650px){
+        width: 165px;
+        height: 240px;
+        border-radius: 16px;
+    }
     
     &:hover ${CardContent} {
         background-color: #a6bcfa;
