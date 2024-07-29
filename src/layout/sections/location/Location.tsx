@@ -5,6 +5,8 @@ import map from "./../../../assets/images/map.webp"
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {LinkIcon} from "../../../components/Icon/Icon";
 import circle from "./../../../assets/images/sectiontitlecircle.svg"
+import circleSmall from "./../../../assets/images/sectiontitlecirclesmall.svg"
+import {font} from "../../../styles/Common";
 
 const infoData =
     [
@@ -37,7 +39,7 @@ export const Location = () => {
                                   height={"26"}
                                   viewBox={"0 0 26 26"}/>
                     </IconList>
-                    <Name>I’m <span>Alireza</span> Kavousy nezjad</Name>
+                    <Name>I’m <span>Alireza</span><br /> <span>Kavousy nezjad</span></Name>
                     <InfoList>
                         {infoData.map((item, i) => (<li key={i}>{item}</li>))}
                     </InfoList>
@@ -56,6 +58,17 @@ const StyledLocation = styled.section`
     background-position: right -205px bottom 0, left 42px top 68px;
     background-repeat: no-repeat;
 
+    @media ${({theme}) => theme.media.tablet} {
+        background-position: right 0 bottom 0, left 3vw bottom 8vh;
+        background-size: 60% auto, 55% auto;
+        padding: 70px 10px;
+    }
+
+    @media ${({theme}) => theme.media.mobile} {
+        height: 668px;
+        padding-top: 48px;
+    }
+    
     position: relative;
 `
 
@@ -63,30 +76,59 @@ const Info = styled.div`
     position: absolute;
     left: 115px;
     bottom: 40px;
-    width: 563px;
-    height: 491px;
+    max-width: 563px;
+    //height: 491px;
     padding: 30px 24px 65px 59px;
     border-radius: 100px 0;
     border: 2px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(132deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 71, 255, 0.05) 100%);
     backdrop-filter: blur(10px);
+
+    @media ${({theme}) => theme.media.tablet} {
+        position: static;
+        margin: 0 auto;
+    }
+
+    @media ${({theme}) => theme.media.mobile} {
+        padding: 40px 18px 35px 28px;
+        border-radius: 54px 0;
+        border: 1px solid #FFF;
+        max-width: 400px;
+    }
+
+    @media screen and (max-width: 450px){
+        max-width: 300px;
+    }
 `
 
 const IconList = styled.ul`
     display: flex;
     column-gap: 16px;
     align-self: flex-end;
+
+    @media ${({theme}) => theme.media.mobile} {
+        display: none;
+    }
 `
 
 const Name = styled.span`
     margin: 18px 0 22px;
+    
+    & > span:first-child {
+        color: #2157F2;
+    }
+
+    & > span:last-child {
+        white-space: nowrap;
+    }
+
     font-weight: 700;
     font-size: 60px;
     line-height: 136%;
     color: #393939;
-
-    span {
-        color: blue;
+    
+    @media ${({theme}) => theme.media.tablet} {
+        ${font({ weight: 700, Fmax: 60, Fmin: 28})};
     }
 `
 
@@ -104,7 +146,20 @@ const InfoList = styled.ul`
         line-height: 136%;
 
         & + li {
-            margin-top: 6px;
+            margin-top: 5px;
+        }
+
+        @media ${({theme}) => theme.media.tablet} {
+            ${font({ Fmax: 20, Fmin: 10})};
+        }
+
+        @media ${({theme}) => theme.media.mobile} {
+            list-style-image: url(${circleSmall});
+            padding-left: 7px;
+
+            & + li {
+                margin-top: 3px;
+            }
         }
     }
 `
