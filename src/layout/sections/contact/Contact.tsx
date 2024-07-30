@@ -12,56 +12,56 @@ export const Contact = () => {
             <Container>
                 <SectionTitle>Contact Us</SectionTitle>
                 <Box>
-                    <FlexWrapper justify={"space-between"} align={"center"}>
-                        <FormWrapper>
-                            <Title>Get in touch</Title>
-                            <StyledForm>
-                                <Field type={"email"} placeholder={"e-mail"}/>
-                                <Field type={"phone"} placeholder={"phone"}/>
-                                <Field as={'textarea'} placeholder={"massage"}/>
-                                <Button>Send</Button>
-                            </StyledForm>
-                        </FormWrapper>
-                        <FlexWrapper direction={"column"} justify={"flex-end"} gap={"30px"}>
-                            <FlexWrapper align={"center"} gap={"23px"}>
-                                <LinkIcon href="#"
-                                          iconId={"location"}
-                                          width={"38"}
-                                          height={"38"}
-                                          viewBox={"0 0 38 38"}
-                                          fill={'#2157F2'}/>
-                                <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
-                                    <Text1>Location</Text1>
-                                    <Text2>Mashhad/Iran</Text2>
-                                </FlexWrapper>
-                            </FlexWrapper>
-
-                            <FlexWrapper align={"center"} gap={"23px"}>
-                                <LinkIcon href="#"
-                                          iconId={"phone"}
-                                          width={"38"}
-                                          height={"38"}
-                                          viewBox={"0 0 26 26"}/>
-                                <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
-                                    <Text1>Phone</Text1>
-                                    <Text2>+989150063913</Text2>
-                                </FlexWrapper>
-                            </FlexWrapper>
-
-                            <FlexWrapper align={"center"} gap={"23px"}>
-                                <LinkIcon href="#"
-                                          iconId={"email"}
-                                          width={"38"}
-                                          height={"38"}
-                                          viewBox={"0 0 38 38"}
-                                          fill={'#2157F2'}/>
-                                <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
-                                    <Text1>Email</Text1>
-                                    <Text2>arkn3913@gmail.com</Text2>
-                                </FlexWrapper>
+                    <FormWrapper>
+                        <Title>Get in touch</Title>
+                        <StyledForm>
+                            <Field type={"email"} placeholder={"e-mail"}/>
+                            <Field type={"phone"} placeholder={"phone"}/>
+                            <Field as={'textarea'} placeholder={"massage"}/>
+                            <Button>Send</Button>
+                        </StyledForm>
+                    </FormWrapper>
+                    <InfoWrapper>
+                        <FlexWrapper direction={"column"} gap={"30px"}>
+                        <FlexWrapper align={"center"} gap={"23px"}>
+                            <LinkIcon href="#"
+                                      iconId={"location"}
+                                      width={"38"}
+                                      height={"38"}
+                                      viewBox={"0 0 38 38"}
+                                      fill={'#2157F2'}/>
+                            <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
+                                <Text1>Location</Text1>
+                                <Text2>Mashhad/Iran</Text2>
                             </FlexWrapper>
                         </FlexWrapper>
-                    </FlexWrapper>
+
+                        <FlexWrapper align={"center"} gap={"23px"}>
+                            <LinkIcon href="#"
+                                      iconId={"phone"}
+                                      width={"38"}
+                                      height={"38"}
+                                      viewBox={"0 0 26 26"}/>
+                            <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
+                                <Text1>Phone</Text1>
+                                <Text2>+989150063913</Text2>
+                            </FlexWrapper>
+                        </FlexWrapper>
+
+                        <FlexWrapper align={"center"} gap={"23px"}>
+                            <LinkIcon href="#"
+                                      iconId={"email"}
+                                      width={"38"}
+                                      height={"38"}
+                                      viewBox={"0 0 38 38"}
+                                      fill={'#2157F2'}/>
+                            <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
+                                <Text1>Email</Text1>
+                                <Text2>arkn3913@gmail.com</Text2>
+                            </FlexWrapper>
+                        </FlexWrapper>
+                        </FlexWrapper>
+                    </InfoWrapper>
                 </Box>
                 <FlexWrapper justify={"center"} align={"center"} gap={"22px"}>
                     <LinkIcon href="#"
@@ -92,10 +92,23 @@ const StyledContact = styled.section`
 
 const Box = styled.div`
     margin: 89px auto 65px;
-    padding: 53px 113px 46px 82px;
-    width: 932px;
+    //padding: 53px 113px 46px 82px;
+    padding: 113px 20px 82px;
+    max-width: 932px;
     box-shadow: 8px 8px 34px 0 rgba(0, 0, 0, 0.05);
     background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+
+    @media ${({theme}) => theme.media.tablet} {
+        flex-direction: column;
+        row-gap: 43px;
+        box-shadow: none;
+        padding: 0;
+        margin: 68px auto 43px;
+    }
 `
 
 const Title = styled.h3`
@@ -108,9 +121,11 @@ const Title = styled.h3`
 
 const Field = styled.input`
     width: 100%;
+
     &[type] {
         max-width: 49%;
     }
+
     border-radius: 9px;
     border: none;
     background-color: #f5f5f5;
@@ -126,13 +141,32 @@ const Field = styled.input`
 const FormWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    //flex-wrap: wrap;
-    max-width: 430px;    
-    
+    max-width: 430px;
+
     textarea {
         resize: none;
         height: 150px;
-    }    
+    }
+
+    @media ${({theme}) => theme.media.tablet} {
+        box-shadow: 8px 8px 34px 0 rgba(0, 0, 0, 0.05);
+        padding: 53px 82px 46px;
+        max-width: 593px;
+    }
+`
+
+const InfoWrapper = styled.div`
+    display: flex;
+    //flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //gap: 30px;
+    @media ${({theme}) => theme.media.tablet} {
+        box-shadow: 8px 8px 34px 0 rgba(0, 0, 0, 0.05);
+        padding: 60px 107px 89px;
+        max-width: 593px;
+        width: 100%;
+    }
 `
 
 const StyledForm = styled.form`
@@ -140,6 +174,7 @@ const StyledForm = styled.form`
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 25px;
+
     ${Button} {
         border-radius: 9px;
         padding: 10px 40px;
@@ -148,7 +183,7 @@ const StyledForm = styled.form`
     }
 `
 
-const Text1 = styled.h4 `
+const Text1 = styled.h4`
     font-weight: 500;
     font-size: 16px;
     line-height: 136%;
@@ -156,11 +191,11 @@ const Text1 = styled.h4 `
     color: #000;
 `
 
-const Text2 = styled.h5 `
+const Text2 = styled.h5`
     font-weight: 400;
     font-size: 12px;
     line-height: 136%;
     text-align: center;
-    color: #8b8b8b;    
+    color: #8b8b8b;
 `
 
