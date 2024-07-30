@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container";
 import {SectionTitle} from "../../../components/SectionTitle";
@@ -9,6 +9,23 @@ import {Contact} from "./contact/Contact";
 
 export const Contacts = () => {
 
+    const [width, setWidth] = useState(window.innerWidth);
+    const tablet = 768;
+    const mobile = 576;
+
+    const handleWindowResize = () => setWidth(window.innerWidth);
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowResize );
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize)
+        }
+    }, []);
+
+    const calcSize = () => {
+        return width > mobile ? (width > tablet ? '38px' : '72px') : '44px';
+    }
 
     return (
         <StyledContact>
@@ -30,8 +47,8 @@ export const Contacts = () => {
                                      text2={"Mashhad/Iran"}
                                      href="#"
                                      iconId={"location"}
-                                     width={"38"}
-                                     height={"38"}
+                                     width={calcSize()}
+                                     height={calcSize()}
                                      viewBox={"0 0 38 38"}
                                      fill={'#2157F2'}
                             />
@@ -39,16 +56,16 @@ export const Contacts = () => {
                                      text2={"+989150063913"}
                                      href="#"
                                      iconId={"phone"}
-                                     width={"38"}
-                                     height={"38"}
+                                     width={calcSize()}
+                                     height={calcSize()}
                                      viewBox={"0 0 26 26"}
                             />
                             <Contact text1={"Email"}
                                      text2={"arkn3913@gmail.com"}
                                      href="#"
                                      iconId={"email"}
-                                     width={"38"}
-                                     height={"38"}
+                                     width={calcSize()}
+                                     height={calcSize()}
                                      viewBox={"0 0 38 38"}
                                      fill={'#2157F2'}
                             />
