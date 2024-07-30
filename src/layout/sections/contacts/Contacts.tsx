@@ -5,8 +5,11 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
 import {LinkIcon} from "../../../components/Icon/Icon";
+import {Contact} from "./contact/Contact";
 
-export const Contact = () => {
+export const Contacts = () => {
+
+
     return (
         <StyledContact>
             <Container>
@@ -23,43 +26,32 @@ export const Contact = () => {
                     </FormWrapper>
                     <InfoWrapper>
                         <FlexWrapper direction={"column"} gap={"30px"}>
-                        <FlexWrapper align={"center"} gap={"23px"}>
-                            <LinkIcon href="#"
-                                      iconId={"location"}
-                                      width={"38"}
-                                      height={"38"}
-                                      viewBox={"0 0 38 38"}
-                                      fill={'#2157F2'}/>
-                            <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
-                                <Text1>Location</Text1>
-                                <Text2>Mashhad/Iran</Text2>
-                            </FlexWrapper>
-                        </FlexWrapper>
-
-                        <FlexWrapper align={"center"} gap={"23px"}>
-                            <LinkIcon href="#"
-                                      iconId={"phone"}
-                                      width={"38"}
-                                      height={"38"}
-                                      viewBox={"0 0 26 26"}/>
-                            <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
-                                <Text1>Phone</Text1>
-                                <Text2>+989150063913</Text2>
-                            </FlexWrapper>
-                        </FlexWrapper>
-
-                        <FlexWrapper align={"center"} gap={"23px"}>
-                            <LinkIcon href="#"
-                                      iconId={"email"}
-                                      width={"38"}
-                                      height={"38"}
-                                      viewBox={"0 0 38 38"}
-                                      fill={'#2157F2'}/>
-                            <FlexWrapper direction={"column"} justify={"space-between"} align={"start"}>
-                                <Text1>Email</Text1>
-                                <Text2>arkn3913@gmail.com</Text2>
-                            </FlexWrapper>
-                        </FlexWrapper>
+                            <Contact text1={"Location"}
+                                     text2={"Mashhad/Iran"}
+                                     href="#"
+                                     iconId={"location"}
+                                     width={"38"}
+                                     height={"38"}
+                                     viewBox={"0 0 38 38"}
+                                     fill={'#2157F2'}
+                            />
+                            <Contact text1={"Phone"}
+                                     text2={"+989150063913"}
+                                     href="#"
+                                     iconId={"phone"}
+                                     width={"38"}
+                                     height={"38"}
+                                     viewBox={"0 0 26 26"}
+                            />
+                            <Contact text1={"Email"}
+                                     text2={"arkn3913@gmail.com"}
+                                     href="#"
+                                     iconId={"email"}
+                                     width={"38"}
+                                     height={"38"}
+                                     viewBox={"0 0 38 38"}
+                                     fill={'#2157F2'}
+                            />
                         </FlexWrapper>
                     </InfoWrapper>
                 </Box>
@@ -182,20 +174,3 @@ const StyledForm = styled.form`
         line-height: 136%;
     }
 `
-
-const Text1 = styled.h4`
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 136%;
-    text-align: center;
-    color: #000;
-`
-
-const Text2 = styled.h5`
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 136%;
-    text-align: center;
-    color: #8b8b8b;
-`
-

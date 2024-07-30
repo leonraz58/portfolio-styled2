@@ -6,7 +6,7 @@ import {Projects} from "./layout/sections/projects/Projects";
 import {Location} from "./layout/sections/location/Location";
 import {Services} from "./layout/sections/services/Services";
 import {Learning} from "./layout/sections/learning/Learning";
-import {Contact} from "./layout/sections/contact/Contact";
+import {Contacts} from "./layout/sections/contacts/Contacts";
 import {Footer} from "./layout/footer/Footer";
 import {ThemeProvider} from "styled-components";
 import {myTheme} from "./styles/Theme";
@@ -23,7 +23,7 @@ function App() {
             <Location/>
             <Services/>
             <Learning/>
-            <Contact/>
+            <Contacts/>
             <Footer/>
         </>
         </ThemeProvider>
