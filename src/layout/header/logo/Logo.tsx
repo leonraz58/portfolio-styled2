@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../../assets/images/header/logo.svg";
+import logo2 from "../../../assets/images/header/logo2.svg";
 
 export const Logo: React.FC = () => {
     return (
@@ -20,7 +21,12 @@ const StyledLogo = styled.div`
     background-color: rgba(166, 188, 250, 0.7);
 
     @media ${({theme}) => theme.media.tablet} {
-        width: 72px;
-        height: 72px;
+        width: 70px;
+        height: 70px;
+        background-image: url(${logo2});
+        background-color: transparent;
+        background-position: unset;
+        
+
     }
 `

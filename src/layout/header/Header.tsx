@@ -27,5 +27,9 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
-    
+
+    @media ${({theme}) => theme.media.tablet} {
+        background-color: rgba(255,255,255,0.7);
+        padding: 0 40px;
+    }
 `
