@@ -10,12 +10,14 @@ import {Contacts} from "./layout/sections/contacts/Contacts";
 import {Footer} from "./layout/footer/Footer";
 import {ThemeProvider} from "styled-components";
 import {myTheme} from "./styles/Theme";
+import {Header} from "./layout/header/Header";
 
 
 function App() {
     return (
         <ThemeProvider theme={myTheme.light}>
         <>
+            <Header/>
             <GlobalStyles/>
             <Main/>
             <Skills/>
