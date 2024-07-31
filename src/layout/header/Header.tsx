@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
         <StyledHeader>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
-                    <FlexWrapper align={"center"} justify={"center"} gap={"60px"}>
+                    <FlexWrapper align={"center"} justify={"center"}>
                         <DesktopMenu/>
                         <ToggleTheme/>
                     </FlexWrapper>
@@ -31,5 +31,9 @@ const StyledHeader = styled.header`
     @media ${({theme}) => theme.media.tablet} {
         background-color: rgba(255,255,255,0.7);
         padding: 0 40px;
+    }
+
+    @media ${({theme}) => theme.media.tablet} {
+        padding: 0 20px;
     }
 `

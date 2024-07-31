@@ -13,20 +13,24 @@ export const Logo: React.FC = () => {
 
 const StyledLogo = styled.div`
     background-image: url(${logo});
-    background-position: 4px 7px;
+    //background-position: 4px 7px;
     width: 90px;
     height: 90px;
     cursor: pointer;
     border-radius: 100%;
     background-color: rgba(166, 188, 250, 0.7);
+    background-size: cover;
 
     @media ${({theme}) => theme.media.tablet} {
         width: 70px;
         height: 70px;
         background-image: url(${logo2});
         background-color: transparent;
-        background-position: unset;
-        
+        background-position: 0px 3px;
+    }
 
+    @media ${({theme}) => theme.media.mobile} {
+        width: 37px;
+        height: 37px;
     }
 `

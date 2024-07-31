@@ -90,15 +90,19 @@ const StyledMain = styled.section`
     background-image: linear-gradient(to right, #A6BCFA 30%, #FFFFFF 30%);
     background-repeat: no-repeat;
     background-position: 0 0;
-    padding-top: 170px;
+    padding-top: 189px;
     padding-bottom: 50px;
     
     @media ${({theme}) => theme.media.tablet} {
         background-position: top 70px left 0;
-        background-image: linear-gradient(to right, #A6BCFA 50%, #FFFFFF 50%)
+        background-image: linear-gradient(to right, #A6BCFA 50%, #FFFFFF 50%);
+        padding-top: 123px;
     }
-    
-    
+
+    @media ${({theme}) => theme.media.mobile} {
+        background-position: top 37px left 0;
+        padding-top: 96px;
+    }
 `
 
 const MainCardWrapper = styled.div`

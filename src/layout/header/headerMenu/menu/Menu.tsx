@@ -53,14 +53,17 @@ const NavLink = styled.a`
         height: 2px;
         background-color: #A6BCFA;
         transition: 0.5s;
-        width: 0%;
+        width: 0;
     }
     
     &:hover {
         &::before {
             width: 100%;
-            
         }
+    }
+
+    @media ${({theme}) => theme.media.mobile} {
+        font-size: 10px;
     }
 `
 
