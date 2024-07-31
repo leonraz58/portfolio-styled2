@@ -43,8 +43,27 @@ const NavLink = styled.a`
     font-weight: 400;
     text-align: center;
     color: #393939;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        height: 2px;
+        background-color: #A6BCFA;
+        transition: 0.5s;
+        width: 0%;
+    }
+    
+    &:hover {
+        &::before {
+            width: 100%;
+            
+        }
+    }
 `
 
 const MenuItem = styled.li`
-    //position: relative;
+    
 `

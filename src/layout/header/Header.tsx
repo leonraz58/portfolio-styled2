@@ -1,5 +1,4 @@
-import React, {useEffect} from "react";
-import {Container} from "../../components/Container";
+import React from "react";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import styled from "styled-components";
 import {Logo} from "./logo/Logo";
